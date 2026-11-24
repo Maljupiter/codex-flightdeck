@@ -18,11 +18,11 @@ If one batch fails, record it as failed and stop only its dependents. Other batc
 
 ## Cost and quality controls
 
-- Use the current model catalog rather than hard-coded identifiers.
+- Use the current native runtime capabilities rather than hard-coded identifiers.
 - Estimate input, output, retry, and verification tokens before selecting a high-volume route.
 - Review a fixed sample from every batch.
 - Re-run disagreements with the same evidence and record the reason for the final label.
-- Record the exact catalog model IDs and mark cost or latency as unknown when comparable evidence is unavailable.
+- Record the exact runtime-exposed model IDs and mark cost or latency as unknown when comparable evidence is unavailable.
 
 ## Deliverable
 

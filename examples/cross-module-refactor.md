@@ -15,12 +15,14 @@ This is not a good direct-path task: it has cross-module coupling, a shared conf
 | Field | Decision |
 | --- | --- |
 | Intensity | High |
-| Shape | Sol decides, then bounded batches |
+| Shape | A runtime-verified Astra decision owner decides, then bounded batches |
 | Shared owner | One integration owner for the configuration contract |
 | File boundary | Each batch owns separate modules; no concurrent edits to the shared contract |
 | Authorization | Internal delegation only; no network or publication |
 | Permission scope | Read in-scope modules; write only to each batch's assigned paths |
 | Acceptance evidence | Tests, type checks, unchanged behavior, and a final diff review |
+
+Prefer one supported Sol owner for the coherent implementation and tests if splitting the shared contract would add friction. The already capable active parent can make the decision directly. Independent high-risk auth review uses an eligible Astra reviewer; ordinary review does not imply quorum.
 
 ## Batches
 

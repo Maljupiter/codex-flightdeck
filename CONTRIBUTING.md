@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for helping improve `multi-model-orchestrator`.
+Thanks for helping improve `codex-flightdeck`.
 
 ## Before opening a change
 

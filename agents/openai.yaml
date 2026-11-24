@@ -1,4 +1,4 @@
 interface:
-  display_name: "Multi-Model Orchestrator"
-  short_description: "Decide and execute safe routing of complex tasks across Codex agents"
-  default_prompt: "Use $multi-model-orchestrator in [plan-only|execute] mode to screen the task for a direct path, and when delegation is authorized, plan or execute safe routing across available Codex agents with ownership, permission, and verification evidence."
+  display_name: "Codex Flightdeck"
+  short_description: "Route available models with owned work and verified integration"
+  default_prompt: "Use $codex-flightdeck in execute mode with lean review. Keep minor work direct, verify native runtime capabilities, delegate only within existing authority, and integrate against explicit acceptance checks. Use quorum only when explicitly chosen or already required."

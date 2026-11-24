@@ -70,3 +70,9 @@ jobs:
 
       - name: Validate skill file integrity
         run: python scripts/check_skill_files.py
+
+      - name: Test review quorum receipts
+        run: python -B -m unittest discover -s tests -v
+
+      - name: Test offline evaluation harness
+        run: python -B -m unittest discover -s scripts -p 'test_*.py' -v

@@ -8,7 +8,7 @@ import re
 from pathlib import Path
 
 
-VALID_ROUTES = {"direct", "sol", "batch", "stop"}
+VALID_ROUTES = {"direct", "decision", "batch", "stop"}
 VALID_AUTHORIZATION = {"none", "internal_delegation", "external_action"}
 VALID_REQUESTED_SCOPE = {"external_action", "write", "network", "credentials"}
 ID_PATTERN = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")

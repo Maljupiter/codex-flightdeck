@@ -7,11 +7,12 @@ Use this reference whenever a task leaves the direct path. The contract makes pa
 Record the following before dispatch:
 
 ```text
-route: direct | sol | batch | stop
+route: direct | decision | batch | stop
 intensity: low | medium | high | critical
 reason: why this route fits the scope, coupling, and risk
 authorization: what internal delegation is allowed; what is excluded
-catalog_snapshot: time, available exact model IDs, relevant capabilities
+runtime_snapshot: time, exposed exact model IDs, relevant tools and capabilities
+review_mode: lean | quorum | quorum lineage (explicit choice or governing requirement)
 integration_owner: one accountable agent/person
 acceptance: checks and evidence required before reporting success
 ```
@@ -45,7 +46,7 @@ credentials: none
 external_actions: none
 ```
 
-Grant a permission only for the specific batch that needs it, and never treat a model's request for broader access as authorization. A batch must not modify a path owned by another active batch.
+Grant a permission only for the specific batch that needs it, and never treat a model's request for broader access as authorization. A batch must not modify a path owned by another active batch. Tell each writer that others share the codebase; preserve their edits. Serialize writers in a shared mutable checkout. Use isolated supported writer roots/worktrees for parallel mutation, with one integration owner. Keep handoffs self-contained and compact; supply only relevant evidence, not full chat histories.
 
 ## Lifecycle and partial failure
 
@@ -74,5 +75,9 @@ assumptions:
 unresolved_risks:
 next_action:
 ```
+
+Reuse workers for in-scope corrections. Prefer completion notifications or bounded waits over status polling; repeat a check only after a change, failure or evidence gap.
+
+For `quorum` or `quorum lineage`, follow [review-quorum.md](review-quorum.md) for artifact identity, reviewer eligibility, blind independence and correction rounds. A quorum cannot be replaced by one worker claiming multiple approvals.
 
 The integration owner inspects every claimed file change, verifies that paths and permissions were respected, resolves conflicts, and runs the relevant checks on the integrated tree. The final report should include the route, exact model IDs and effort actually applied, changed files, checks, cost/latency assumptions, authorized external actions, and remaining uncertainty.
